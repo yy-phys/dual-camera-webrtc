@@ -1,0 +1,15 @@
+.one-column {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.viewer {
+  border: 1px solid gray;
+  width: 100%;
+  max-width: 1280px;
+}
+
+#map {
+  width: 400px;
+  height: 400px;
+}

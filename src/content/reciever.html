@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Reciever</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@open-ayame/ayame-web-sdk@2022.1.0/dist/ayame.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+
+    <script type="module" src="../js/ayame.js"></script>
+    <script type="module" src="../js/map.js"></script>
+    <script type="module" src="../js/recorder.js"></script>
+    <script type="module" src="../js/reciever.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <p>
+        <label for="room-input">ルームID:</label>
+        <input id="room-input" type="text" value="" />
+      </p>
+      <button id="connect">接続</button>
+      <button id="disconnect" disabled>切断</button>
+    </div>
+
+    <div>
+      <p>録画フォーマット:<select id="codecs" disabled></select></p>
+      <button id="record-start" disabled>録画開始</button>
+      <button id="record-stop" disabled>録画終了</button>
+      <button id="download" disabled>ダウンロード</button>
+    </div>
+
+    <div class="one-column">
+      <video id="local-video" class="viewer" muted autoplay playsinline></video>
+      <video
+        id="remote-video"
+        class="viewer"
+        autoplay
+        playsinline
+        controls
+      ></video>
+    </div>
+
+    <div id="txt"></div>
+    <div id="map"></div>
+  </body>
+</html>
